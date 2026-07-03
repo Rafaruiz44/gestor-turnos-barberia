@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Barbería Estilo — Reservar turno</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/estilos.css') }}">
+</head>
+<body>
+  <header class="app-header">
+    <h1>💈 Barbería Estilo</h1>
+    <nav><a href="/panel">Panel del barbero</a></nav>
+  </header>
+
+  <main>
+    <div class="tarjeta">
+      <h2>1. Elegí el servicio</h2>
+      <div id="servicios-grid" class="servicios-grid">
+        <p class="vacio">Cargando servicios...</p>
+      </div>
+
+      <h2 style="margin-top: 1.5rem;">2. Elegí fecha y horario</h2>
+      <label for="fecha">Fecha</label>
+      <input type="date" id="fecha">
+
+      <div id="horarios-grid" class="horarios-grid"></div>
+
+      <h2 style="margin-top: 1.5rem;">3. Tus datos</h2>
+      <label for="nombre">Nombre y apellido</label>
+      <input type="text" id="nombre" placeholder="Ej: Juan Pérez">
+
+      <label for="telefono">Teléfono</label>
+      <input type="tel" id="telefono" placeholder="Ej: 2226-123456">
+
+      <button class="btn-primario" id="btn-reservar" disabled>Reservar turno</button>
+      <div id="mensaje-resultado"></div>
+    </div>
+  </main>
+
+  <script src="{{ url_for('static', filename='js/cliente.js') }}"></script>
+</body>
+</html>

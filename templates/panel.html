@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Barbería Estilo — Panel del barbero</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/estilos.css') }}">
+</head>
+<body>
+  <header class="app-header">
+    <h1>💈 Panel del barbero</h1>
+    <nav><a href="/">Reservar turno</a></nav>
+  </header>
+
+  <main>
+    <div class="tarjeta">
+      <h2>Turnos del día</h2>
+      <label for="filtro-fecha">Ver turnos de</label>
+      <input type="date" id="filtro-fecha">
+      <div id="lista-turnos" style="margin-top: 1rem;">
+        <p class="vacio">Cargando turnos...</p>
+      </div>
+    </div>
+
+    <div class="tarjeta">
+      <h2>Gestión de servicios</h2>
+
+      <div id="lista-servicios" style="margin-bottom: 1.2rem;"></div>
+
+      <!-- Formulario agregar / editar -->
+      <div class="form-servicio" id="form-servicio">
+        <h3 id="form-titulo" style="margin:0 0 0.8rem; font-size:0.95rem; color: var(--color-texto-suave);">Nuevo servicio</h3>
+        <label for="srv-nombre">Nombre</label>
+        <input type="text" id="srv-nombre" placeholder="Ej: Corte + color">
+        <label for="srv-duracion">Duración (minutos)</label>
+        <input type="number" id="srv-duracion" min="5" step="5" placeholder="Ej: 60">
+        <label for="srv-precio">Precio ($)</label>
+        <input type="number" id="srv-precio" min="0" step="100" placeholder="Ej: 5000">
+        <div style="display:flex; gap: 0.6rem; margin-top: 1rem;">
+          <button class="btn-primario" id="btn-guardar-servicio" style="margin:0; flex:1;">Guardar</button>
+          <button class="btn-secundario" id="btn-cancelar-form" style="display:none;">Cancelar</button>
+        </div>
+        <div id="msg-servicio"></div>
+      </div>
+    </div>
+  </main>
+
+  <script src="{{ url_for('static', filename='js/panel.js') }}"></script>
+</body>
+</html>

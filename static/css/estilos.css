@@ -1,0 +1,342 @@
+:root {
+  --color-primario: #2b2118;
+  --color-acento: #c9a86a;
+  --color-acento-oscuro: #a8854f;
+  --color-fondo: #f7f4ef;
+  --color-tarjeta: #ffffff;
+  --color-texto: #2b2118;
+  --color-texto-suave: #6b6258;
+  --color-borde: #e4ddd1;
+  --color-exito: #3f7d4f;
+  --color-error: #b3413a;
+  --radio: 10px;
+  --sombra: 0 2px 10px rgba(43, 33, 24, 0.08);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+  background-color: var(--color-fondo);
+  color: var(--color-texto);
+  line-height: 1.5;
+}
+
+header.app-header {
+  background-color: var(--color-primario);
+  color: #fff;
+  padding: 1.25rem 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header.app-header h1 {
+  margin: 0;
+  font-size: 1.3rem;
+  letter-spacing: 0.5px;
+}
+
+header.app-header nav a {
+  color: var(--color-acento);
+  text-decoration: none;
+  font-size: 0.9rem;
+  border: 1px solid var(--color-acento);
+  padding: 0.4rem 0.9rem;
+  border-radius: 20px;
+  transition: background-color 0.15s ease;
+}
+
+header.app-header nav a:hover {
+  background-color: var(--color-acento);
+  color: var(--color-primario);
+}
+
+main {
+  max-width: 760px;
+  margin: 2rem auto;
+  padding: 0 1.25rem;
+}
+
+.tarjeta {
+  background-color: var(--color-tarjeta);
+  border: 1px solid var(--color-borde);
+  border-radius: var(--radio);
+  box-shadow: var(--sombra);
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+h2 {
+  margin-top: 0;
+  font-size: 1.1rem;
+  color: var(--color-primario);
+}
+
+label {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-bottom: 0.3rem;
+  margin-top: 1rem;
+  color: var(--color-texto-suave);
+}
+
+input, select {
+  width: 100%;
+  padding: 0.6rem 0.7rem;
+  border: 1px solid var(--color-borde);
+  border-radius: 6px;
+  font-size: 0.95rem;
+  background-color: #fff;
+  color: var(--color-texto);
+}
+
+input:focus, select:focus {
+  outline: none;
+  border-color: var(--color-acento-oscuro);
+}
+
+.servicios-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 0.6rem;
+  margin-top: 0.5rem;
+}
+
+.servicio-card {
+  border: 1px solid var(--color-borde);
+  border-radius: 8px;
+  padding: 0.7rem;
+  cursor: pointer;
+  text-align: left;
+  background: #fff;
+  font-family: inherit;
+}
+
+.servicio-card.seleccionado {
+  border-color: var(--color-acento-oscuro);
+  background-color: #fbf4e6;
+}
+
+.servicio-card strong {
+  display: block;
+  font-size: 0.9rem;
+}
+
+.servicio-card span {
+  font-size: 0.8rem;
+  color: var(--color-texto-suave);
+}
+
+.horarios-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(70px, 1fr));
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.horario-btn {
+  padding: 0.5rem 0;
+  text-align: center;
+  border: 1px solid var(--color-borde);
+  border-radius: 6px;
+  background: #fff;
+  cursor: pointer;
+  font-size: 0.85rem;
+}
+
+.horario-btn.seleccionado {
+  background-color: var(--color-acento-oscuro);
+  color: #fff;
+  border-color: var(--color-acento-oscuro);
+}
+
+button.btn-primario {
+  margin-top: 1.5rem;
+  width: 100%;
+  padding: 0.75rem;
+  background-color: var(--color-primario);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: opacity 0.15s ease;
+}
+
+button.btn-primario:hover {
+  opacity: 0.9;
+}
+
+button.btn-primario:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.mensaje {
+  margin-top: 1rem;
+  padding: 0.7rem 0.9rem;
+  border-radius: 6px;
+  font-size: 0.9rem;
+}
+
+.mensaje.exito {
+  background-color: #e6f2e8;
+  color: var(--color-exito);
+}
+
+.mensaje.error {
+  background-color: #f6e6e4;
+  color: var(--color-error);
+}
+
+.turno-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.8rem 0;
+  border-bottom: 1px solid var(--color-borde);
+}
+
+.turno-item:last-child {
+  border-bottom: none;
+}
+
+.turno-info strong {
+  display: block;
+  font-size: 0.95rem;
+}
+
+.turno-info span {
+  font-size: 0.8rem;
+  color: var(--color-texto-suave);
+}
+
+.turno-hora {
+  font-weight: 700;
+  color: var(--color-acento-oscuro);
+  margin-right: 1rem;
+  min-width: 50px;
+}
+
+.btn-cancelar {
+  background-color: transparent;
+  border: 1px solid var(--color-error);
+  color: var(--color-error);
+  border-radius: 6px;
+  padding: 0.4rem 0.8rem;
+  font-size: 0.8rem;
+  cursor: pointer;
+}
+
+.btn-cancelar:hover {
+  background-color: var(--color-error);
+  color: #fff;
+}
+
+.vacio {
+  text-align: center;
+  color: var(--color-texto-suave);
+  padding: 1.5rem 0;
+  font-size: 0.9rem;
+}
+
+/* Gestión de servicios */
+.servicio-fila {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.7rem 0;
+  border-bottom: 1px solid var(--color-borde);
+}
+
+.servicio-fila:last-child {
+  border-bottom: none;
+}
+
+.servicio-fila-info strong {
+  display: block;
+  font-size: 0.95rem;
+}
+
+.servicio-fila-info span {
+  font-size: 0.8rem;
+  color: var(--color-texto-suave);
+}
+
+.servicio-fila-acciones {
+  display: flex;
+  gap: 0.4rem;
+  flex-shrink: 0;
+}
+
+.btn-editar {
+  background: transparent;
+  border: 1px solid var(--color-acento-oscuro);
+  color: var(--color-acento-oscuro);
+  border-radius: 6px;
+  padding: 0.35rem 0.7rem;
+  font-size: 0.8rem;
+  cursor: pointer;
+}
+
+.btn-editar:hover {
+  background: var(--color-acento-oscuro);
+  color: #fff;
+}
+
+.btn-eliminar {
+  background: transparent;
+  border: 1px solid var(--color-error);
+  color: var(--color-error);
+  border-radius: 6px;
+  padding: 0.35rem 0.7rem;
+  font-size: 0.8rem;
+  cursor: pointer;
+}
+
+.btn-eliminar:hover {
+  background: var(--color-error);
+  color: #fff;
+}
+
+.btn-secundario {
+  flex: 1;
+  padding: 0.75rem;
+  background: transparent;
+  color: var(--color-texto-suave);
+  border: 1px solid var(--color-borde);
+  border-radius: 8px;
+  font-size: 0.95rem;
+  cursor: pointer;
+}
+
+.btn-secundario:hover {
+  background: var(--color-fondo);
+}
+
+.form-servicio {
+  border-top: 1px solid var(--color-borde);
+  padding-top: 1.2rem;
+  margin-top: 0.5rem;
+}
+
+.form-inline-editar {
+  background-color: #fbf4e6;
+  border: 1px solid var(--color-acento);
+  border-radius: 8px;
+  padding: 1rem;
+  margin: 0.4rem 0 0.8rem;
+}
+
+.form-inline-editar label {
+  margin-top: 0.6rem;
+}
+
+.form-inline-editar input {
+  margin-bottom: 0;
+}
